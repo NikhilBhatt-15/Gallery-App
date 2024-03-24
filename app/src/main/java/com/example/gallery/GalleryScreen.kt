@@ -23,7 +23,9 @@ fun GalleryScreen(galleryViewModel: GalleryViewModel) {
         .fillMaxSize()
         .padding(30.dp)
         .padding(top = 20.dp)) {
-        ImageCard(galleryViewModel.currentImage.value)
+        ImageCard(galleryViewModel.currentImage.value){
+            galleryViewModel.change(it)
+        }
         Spacer(modifier = Modifier.height(50.dp))
         DescriptionField(galleryViewModel.currentImage.value)
         Spacer(modifier = Modifier.height(80.dp))
